@@ -6,6 +6,7 @@ import messages from './i18n/messages';
 import { NavBar } from './shared/components/NavBar';
 import { PokemonList } from './pages/pokemon-list/PokemonList';
 import './App.scss';
+import { BarChart } from './pages/chart/BarChart';
 
 function App() {
   const [language, setLanguage] = useState(LOCALES.SPANISH);
@@ -15,7 +16,8 @@ function App() {
         <Router>
           <NavBar></NavBar>
           <Routes>
-            <Route exact path='/' element={<PokemonList></PokemonList>} />
+            <Route exact path='/' element={<PokemonList ln={language}></PokemonList>} />
+            <Route exact path='/report' element={<BarChart></BarChart>} />
             <Route
               path='*'
               element={
